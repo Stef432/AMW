@@ -76,12 +76,24 @@ body {
 	margin-bottom: 4px;
 }
 
+#home {
+	background-color: gainsboro;
+}
+
+#about {
+	background-color: gainsboro;
+}
+
+#products {
+	background-color: gainsboro;
+}
+
 #products h2 {
 	text-align: center;
 }
 
 /* Gallery */
-.gallery {
+.product-section {
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 20px;
 	padding: 20px;
@@ -120,10 +132,6 @@ body {
 	text-align: center;
 	padding: 10px;
 	z-index: 1000;
-}
-
-#contact a {
-	color: gainsboro;
 }
 
 /* Back to Top Button */
@@ -183,4 +191,12 @@ body {
 	nav ul li a {
 		font-size: 14px;
 	}
+}
+
+#contact a, #contact i a {
+    color: #2b2b2b;
+}
+
+#contact a:hover, #contact i a:hover {
+    color: #fdb347; /* Amber Gold */
 }

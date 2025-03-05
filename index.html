@@ -4,40 +4,46 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AMW</title>
+    <title>Abbotsbury Motor Works</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://kit.fontawesome.com/f08286edbb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="page">
-        <!-- Fixed Header -->
-        <div id="header">
-            <nav class="nav">
-                <div class="logo"><a href="#" onclick="scrollToTop()">Abbotsbury Motor Works</a></div>
-                <ul>
-                    <li><a onclick="loadContent('home')">Home</a></li>
-                    <li><a onclick="loadContent('about')">About</a></li>
-                    <li><a onclick="loadContent('products')">Products</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div id="page"> 
+        <!-- Start Nav -->
+        <nav class="nav">
+            <div class="logo"><a href="#" onclick="scrollToTop()">Abbotsbury Motor Works</a></div>
+            <ul>
+                <li><a onclick="loadContent('home')">Home</a></li>
+                <li><a onclick="loadContent('about')">About</a></li>
+                <li><a onclick="loadContent('products')">Products</a></li>
+                <li><a onclick="loadContent('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- End Nav -->
 
         <!-- Dynamic Content -->
-        <div id="content">
+        <section id="content">
             <div id="dynamic-content"></div>
-        </div>
+        </section>
+        <!-- End Dynamic Content -->
 
-        <!-- Fixed Footer -->
-        <div id="footer">
-            <div id="contact" class="section">
-                <h2>Contact Us</h2>
-                <p>Email us at <a href="mailto:info@amw.com">info@amw.com</a> or call us at +123-456-7890.</p>
-            </div>
+        <!-- Contact -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Email us at <a href="mailto:amw@gmail.com">amw@gmail.com</a></p>
+            <p><i class="fa-brands fa-instagram"></i>
+                <a href=" https://www.instagram.com/gs_scrambler/">Check our updates on social media</a>
+            </p>
             <button id="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
-        </div>
+        </section>
+        <!-- End Contact-->
+        <!-- Disclaimers, notes and copyrights-->
+        <footer>
+            <p style="text-align: right;">Website by Stefania</p>
+        </footer>
     </div>
-
     <script>
         // Load content dynamically
         function loadContent(page) {
