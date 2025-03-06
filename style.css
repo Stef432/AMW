@@ -11,9 +11,6 @@ body {
 	color: #2b2b2b; /* Deep Charcoal Gray */
 }
 
-#page {
-  display: flex;
-}
 
 /* Fixed Nav */
 
@@ -88,13 +85,12 @@ section {
 	align-items: center	;
 	padding: 10px;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 20px;
-	text-align: center;
+	grid-gap: 20px;
 }
 
 .gallery-item img {
-	width: 30px;
-	height: 30px;
+	width: 300px;
+	height: 300px;
 	object-fit: cover;
 	border-radius: 10px;
 }
@@ -107,7 +103,7 @@ section {
 }
 
 /* Fixed Footer */
-#footer {
+ footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
