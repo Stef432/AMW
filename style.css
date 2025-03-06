@@ -61,9 +61,11 @@ body {
 #content {
 	margin-top: 100px; /* Space for fixed nav */
 	margin-bottom: 100px; /* Space for fixed footer */
-	padding: 20px;
 	display:flex;
 	flex-direction: row;
+	justify-content: space-between;
+	align-items: center	;
+	padding: 10px;
 }
 
 /* Sections */
@@ -81,9 +83,12 @@ section {
 /* Gallery */
 .gallery-items {
 	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center	;
+	padding: 10px;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 20px;
-	padding: 20px;
 	text-align: center;
 }
 
