@@ -1,19 +1,43 @@
-
-
-    <section id="products" class="product-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="products" class="section">
         <h2>Our Products</h2>
-        <div class="gallery-items">
-            <div class="gallery-item">
-                <img src="images/bmwR80.jpg" alt="BMW Motorbike R80">
-                <p>BMW Motorbike R80</p>
-            </div>
-            <div class="gallery-item">
-                <img src="images/bmw_hub_gs.jpg" alt="BMW Hub GS">
-                <p>BMW Hub GS</p>
-            </div>
-            <div class="gallery-item">
-                <img src="images/hubs_logo.jpg" alt="Motorbike Hub">
-                <p>Motorbike Hub</p>
-            </div>
+        <hr>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Description</th>
+                        <th>Price in GBP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="images/bmwR80.jpg" alt="BMW Motorbike R80" loading="lazy"></td>
+                        <td>BMW Motorbike R80</td>
+                        <td>456 GBP</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bmw_hub_gs.jpg" alt="BMW Hub GS" loading="lazy"></td>
+                        <td>BMW Hub GS</td>
+                        <td>9876 GBP</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/hubs_logo.jpg" alt="Motorbike Hub" loading="lazy"></td>
+                        <td>Motorbike Hub</td>
+                        <td>3900 GBP</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </section>
+    </div>
+</body>
+</html>

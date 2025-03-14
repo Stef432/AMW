@@ -3,19 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abbotsbury Motor Works</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="https://kit.fontawesome.com/f08286edbb.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div id="page">
         <!-- Start Nav -->
         <nav class="nav">
-            <div class="logo"><a href="#" onclick="scrollToTop()">Abbotsbury Motor Works</a></div>
+            <span class="logo lg-view"><a onclick="showHome()">Abbotsbury Motor Works</a></span>
+            <span class="logo sm-view"><a onclick="showHome()">AMW</a></span>
             <ul>
-                <li><a onclick="loadContent('home')">Home</a></li>
+                <li><a onclick="showHome()">Home</a></li>
                 <li><a onclick="loadContent('about')">About</a></li>
                 <li><a onclick="loadContent('products')">Products</a></li>
                 <li><a onclick="loadContent('contact')">Contact</a></li>
@@ -25,62 +26,89 @@
 
         <!-- Dynamic Content -->
         <section id="content">
-            <div id="dynamic-content"></div>
+            <div id="dynamic-content">
+                <!-- Home Content (Merged from home.html) -->
+                <div id="home" class="section">
+                    <h1>Welcome to AMW</h1>
+                    <hr>
+                    <p>Your destination for premium BMW R80 mods.</p>
+                    <a><img src="images/bmwR80.jpg" alt="BMW Motorbike R80"></a>
+                </div>
+            </div>
         </section>
         <!-- End Dynamic Content -->
 
-        
+        <!-- Footer -->
         <footer>
-            <!-- <section id="contact" class="contact-section"> -->
-                <h2>Contact Us</h2>
-                <p>Email us at <a href="mailto:amw@gmail.com">amw@gmail.com</a></p>
-                <p><i class="fa-brands fa-instagram"></i>
-                    <a href=" https://www.instagram.com/gs_scrambler/">Check our updates on social media</a>
-                </p>
-                <button id="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
-            
-            
-            <!-- Disclaimers, notes and copyrights-->
-
-            <p style="text-align: right;">Website by Stefania</p>
-        </footer>
+    <h2>Contact Us</h2>
+    <div class="footer-links">
+        <p><a onclick="copyEmail()" id="email">Email us at amw@gmail.com</a></p>
+        <p>
+            <a href="https://www.instagram.com/gs_scrambler/" target="_blank">
+                <i class="fab fa-instagram"></i>
+                Check our updates on social media
+            </a>
+        </p>
+    </div>
+    <button id="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
+    <span id="stef">Website by Stefania</span>
+</footer>
     </div>
     <script>
         // Load content dynamically
         function loadContent(page) {
             const content = document.getElementById('dynamic-content');
-            fetch(`${page}.html`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    content.innerHTML = data;
-                })
-                .catch(error => {
-                    console.error("Error loading content: ", error);
-                    content.innerHTML = `<p>Error loading ${page}. Please try again.</p>`;
-                });
+            if (page === 'home') {
+                content.innerHTML = `
+                    <div id="home" class="section">
+                        <h1>Welcome to AMW</h1>
+                        <hr>
+                        <p>Your destination for premium BMW R80 mods.</p>
+                        <a><img src="images/bmwR80.jpg" alt="BMW Motorbike R80"></a>
+                    </div>
+                `;
+            } else {
+                fetch(`${page}.html`)
+                    .then(response => response.text())
+                    .then(data => content.innerHTML = data)
+                    .catch(error => {
+                        console.error("Error loading content: ", error);
+                        content.innerHTML = `<p>Error loading ${page}. Please try again.</p>`;
+                    });
+            }
+        }
+        showHome();
+
+
+        function showHome() {
+            const content = document.getElementById('dynamic-content');
+            content.innerHTML = `
+        <div id="home" class="section">
+            <h1>Welcome to AMW</h1>
+            <hr>
+            <p>Your destination for premium BMW R80 mods.</p>
+            <a><img src="images/bmwR80.jpg" alt="BMW Motorbike R80"></a>
+        </div>
+    `;
         }
 
+        // Load home content by default
+        showHome();
         // Show the button when scrolling down
         window.addEventListener('scroll', function () {
             const backToTopButton = document.getElementById('back-to-top');
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
+            backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
 
         // Scroll to the top smoothly
         function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Copy email address to clipboard
+        function copyEmail() {
+            navigator.clipboard.writeText("amw@gmail.com");
+            alert("Email address copied.");
         }
 
         // Load home content by default
