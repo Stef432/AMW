@@ -1,43 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="products" class="section">
-        <h2>Our Products</h2>
-        <hr>
-        <div class="table-container">
-            <table>
-                <thead>
+<div id="products" class="section">
+    <h2>Our Products</h2>
+    <hr>
+    <div class="table-container">
+        <table>
+            <tbody>
+                <div class="product-wrapper">
                     <tr>
-                        <th>Photo</th>
-                        <th>Description</th>
-                        <th>Price in GBP</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="images/bmwR80.jpg" alt="BMW Motorbike R80" loading="lazy"></td>
-                        <td>BMW Motorbike R80</td>
-                        <td>456 GBP</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/bmw_hub_gs.jpg" alt="BMW Hub GS" loading="lazy"></td>
-                        <td>BMW Hub GS</td>
-                        <td>9876 GBP</td>
+
+                        <td><button class="btn" aria-label="View larger spoked hub image">
+                                <img id="spoked_hub1" src="images/hubs_logo.jpg" alt="spoked hub on 19x1.85 rim"
+                                    loading="lazy" style="width:100%;max-width:300px"></button></td>
+                        <td>
+                            <p style="font-weight: 600;">Spoked hubs for BMW monolever bikes</p>
+                            <p style="font-size: medium;"> These hubs are a direct replacement for the BMW 4 bolt cast
+                                alloy wheels.
+                            </p>
+                            <p style="font-size: medium;">The hubs are CNC machined from solid aluminium billet and
+                                fitted with a cast iron brake surface. They are available in 40 hole or 36 hole
+                                configuration.
+                            </p>
+                        </td>
+
+                        <td>£400*
+
+                        </td>
                     </tr>
                     <tr>
-                        <td><img src="images/hubs_logo.jpg" alt="Motorbike Hub" loading="lazy"></td>
-                        <td>Motorbike Hub</td>
-                        <td>3900 GBP</td>
+                        <td><button class="btn" aria-label="View larger hubs image"><img id="hubs1"
+                                    src="images/3-bolt-rear-hubs.jpg" alt="3 bolt hubs for front cast wheels"
+                                    loading="lazy" style="width:100%;max-width:300px"></button></td>
+                        <td>
+                            <p style="font-weight: 600;">Front hubs for cast wheels</p>
+                            <p style="font-size: medium;">These hubs are machined from aluminium billet and fitted with
+                                a cast iron brake surface. </p>
+                            <p style="font-size: medium;">These 3 bolt hubs are a replacement for your worn out 80G/S or
+                                80ST
+                                hub.</p>
+                            <br>
+                        </td>
+                        <td>£320*
+
+                        </td>
                     </tr>
-                </tbody>
-            </table>
+                    <tr>
+                        <td><button class="btn" aria-label="View larger footrest image"><img id="footrest"
+                                    src="images/foot_peg_pair2.png" alt="footrests" loading="lazy"
+                                    style="width:100%;max-width:300px"></button></td>
+                        <td>
+                            <p style="font-weight: 600;">Footrests</p>
+                            <p style="font-size: medium;">Footrests Lowered and set back to enable big boots to operate
+                                standard gear and brake levers on BMW off road airheads.
+                            </p>
+                        </td>
+                        <td>£110*</td>
+                    </tr>
+                    <!-- <tr>
+                        <td><button class="btn" aria-label="View larger foot peg image"><img id="foot_pegs"
+                                    src="images/foot-pegs.png" alt="large foot pegs" loading="lazy"
+                                    style="width:100%;max-width:300px" ></button>
+                        </td>
+                        <td>
+                            <p style="font-weight: 800;">Large foot pegs</p>
+                            <br>
+                            <p style="font-size: medium;">Suitable for big feet. They are lowered and set back.</p>
+                            <p style="font-size: medium;">Other options available.</p>
+                        </td>
+                        <td>£110*
+
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td><button class="btn" aria-label="View larger monolever image"><img id="paralever1"
+                                    src="images/Paralever_35mm_extension.png" alt="Paralever to mono conversion"
+                                    loading="lazy" style="width:100%;max-width:300px"></button></td>
+                        <td>
+                            <p style="font-weight: 600;">Paralever to monolever conversion</p>
+                            <p style="font-size: medium;">Machined from solid aluminium, these blocks extend your
+                                swinging arm by 50mm.
+                            </p>
+                        </td>
+                        <td>£90*</td>
+                    </tr>
+                </div>
+
+            </tbody>
+        </table>
+
+    </div>
+    <p style="font-size: medium;" class="postage-note">* Prices don't include postage. I'm happy to post globally.
+        Please get in
+        touch to discuss.</p>
+</div>
+
+<!-- MODAL -->
+
+<div id="modal" class="modal-overlay">
+    <div class="modal-wrapper">
+        <button class="close-modal-btn">×</button>
+        <h1>Foot pegs</h1>
+        <div class="modal-content">
+            <img src="images/foot_peg_pair2.png" alt="foot peg detail">
+            <figcaption>Suitable for big feet. They are lowered and set back.</figcaption>
         </div>
     </div>
-</body>
-</html>
+</div>

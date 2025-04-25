@@ -4,115 +4,122 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abbotsbury Motor Works</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&display=swap" rel="stylesheet">
+    <title>Abbotsbury Motor Works - BMW R80 Specialist</title>
+    <meta name="description" content="UK specialists in BMW R80 motorcycle repairs and modifications">
+    <link href="https://fonts.googleapis.com/css?family=Arial%7CBaskervville&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <div id="page">
-        <!-- Start Nav -->
+        <!-- Fixed Navigation -->
         <nav class="nav">
-            <span class="logo lg-view"><a onclick="showHome()">Abbotsbury Motor Works</a></span>
-            <span class="logo sm-view"><a onclick="showHome()">AMW</a></span>
+            <span class="logo lg-view"><a href="#" onclick="showHome(); return false;">Abbotsbury Motor Works</a></span>
+            <span class="logo sm-view"><a href="#" onclick="showHome(); return false;">AMW</a></span>
             <ul>
-                <li><a onclick="showHome()">Home</a></li>
-                <li><a onclick="loadContent('about')">About</a></li>
-                <li><a onclick="loadContent('products')">Products</a></li>
-                <li><a onclick="loadContent('contact')">Contact</a></li>
+                <li><a href="#home" onclick="loadContent('home'); return false;">Home</a></li>
+                <li><a href="#products" onclick="loadContent('products'); return false;">Products</a></li>
+                <li><a href="#contact" onclick="loadContent('contact'); return false;">Contact</a></li>
             </ul>
         </nav>
-        <!-- End Nav -->
 
         <!-- Dynamic Content -->
-        <section id="content">
-            <div id="dynamic-content">
-                <!-- Home Content (Merged from home.html) -->
-                <div id="home" class="section">
-                    <h1>Welcome to AMW</h1>
-                    <hr>
-                    <p>Your destination for premium BMW R80 mods.</p>
-                    <a><img src="images/bmwR80.jpg" alt="BMW Motorbike R80"></a>
-                </div>
-            </div>
-        </section>
-        <!-- End Dynamic Content -->
+        <main>
+            <div id="dynamic-content"></div>
+        </main>
 
         <!-- Footer -->
-        <footer>
-    <h2>Contact Us</h2>
-    <div class="footer-links">
-        <p><a onclick="copyEmail()" id="email">Email us at amw@gmail.com</a></p>
-        <p>
-            <a href="https://www.instagram.com/gs_scrambler/" target="_blank">
-                <i class="fab fa-instagram"></i>
-                Check our updates on social media
-            </a>
-        </p>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <a href="#" onclick="copyEmail(); return false;" class="footer-link"><i class="fas fa-envelope"></i>
+                        amwhubs@gmail.com</a>
+                    <a href="https://www.instagram.com/gs_scrambler/" target="_blank" class="footer-link">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+                <span id="stef">Website by Stefania</span>
+            </div>
+            <button id="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
+        </footer>
     </div>
-    <button id="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
-    <span id="stef">Website by Stefania</span>
-</footer>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script>
-        // Load content dynamically
+        // Consolidated content loader
         function loadContent(page) {
             const content = document.getElementById('dynamic-content');
-            if (page === 'home') {
-                content.innerHTML = `
-                    <div id="home" class="section">
-                        <h1>Welcome to AMW</h1>
-                        <hr>
-                        <p>Your destination for premium BMW R80 mods.</p>
-                        <a><img src="images/bmwR80.jpg" alt="BMW Motorbike R80"></a>
-                    </div>
-                `;
-            } else {
-                fetch(`${page}.html`)
-                    .then(response => response.text())
-                    .then(data => content.innerHTML = data)
-                    .catch(error => {
-                        console.error("Error loading content: ", error);
-                        content.innerHTML = `<p>Error loading ${page}. Please try again.</p>`;
-                    });
-            }
-        }
-        showHome();
+            fetch(`${page}.html`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to load');
+                    return response.text();
+                })
+                .then(data => content.innerHTML = data)
+                .catch(error => {
+                    content.innerHTML = `
+                            <div class="section error">
+                                <h2>Page Load Error</h2>
+                                <p>Unable to load ${page}. Please try again later.</p>
+                                <button onclick="loadContent('home')">Return Home</button>
+                            </div>`;
+                });
 
+        }
 
         function showHome() {
-            const content = document.getElementById('dynamic-content');
-            content.innerHTML = `
-        <div id="home" class="section">
-            <h1>Welcome to AMW</h1>
-            <hr>
-            <p>Your destination for premium BMW R80 mods.</p>
-            <a><img src="images/bmwR80.jpg" alt="BMW Motorbike R80"></a>
-        </div>
-    `;
+            loadContent('home');
         }
 
-        // Load home content by default
-        showHome();
-        // Show the button when scrolling down
+        // Scroll management
         window.addEventListener('scroll', function () {
-            const backToTopButton = document.getElementById('back-to-top');
-            backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+            document.getElementById('back-to-top').style.display =
+                window.scrollY > 300 ? 'block' : 'none';
         });
 
-        // Scroll to the top smoothly
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Copy email address to clipboard
         function copyEmail() {
-            navigator.clipboard.writeText("amw@gmail.com");
-            alert("Email address copied.");
+            navigator.clipboard.writeText("amwhubs@gmail.com");
+            alert("Email address copied to clipboard. Right click and paste on a new message in your email.");
         }
 
-        // Load home content by default
-        loadContent('home');
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            loadContent('home');
+        });
+
+        //Modal logic
+        const btns = document.querySelectorAll('.btn');
+        const modal = document.querySelector('.modal-overlay');
+        const closeBtn = document.querySelector('.close-modal-btn');
+
+        function openModal() {
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', openModal);
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
     </script>
 </body>
 
