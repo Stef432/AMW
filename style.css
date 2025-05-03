@@ -50,7 +50,7 @@ nav .logo a {
 	cursor: pointer;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 0.5rem 1rem;
-	border-radius: 10px;
+	border-radius: 4px;
 }
 nav .logo a:focus-visible {
 	outline: 5px double var(--light); /* AMW Gold */
@@ -71,7 +71,7 @@ nav ul li a {
 	color: #c0c0c0;
 	text-decoration: underline;
 	padding: 0.5rem 1rem;
-	border-radius: 10px;
+	border-radius: 4px;
 	transition: all 0.3s ease;
 	cursor: pointer;
 }
@@ -108,7 +108,7 @@ nav ul li a:focus-visible {
 	padding: 30px 20px;
 	text-align: center;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 4px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	margin: 20px auto;
 	max-width: 1000px;
@@ -145,7 +145,7 @@ nav ul li a:focus-visible {
 	width: 60%;
 	height: auto;
 	margin: 20px auto;
-	border-radius: 10px;
+	border-radius: 4px;
 	display: block;
 	max-width: 400px;
 }
@@ -158,7 +158,7 @@ table {
 	border-collapse: separate;
 	border-spacing: 0;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 4px;
 	overflow: hidden;
 }
 
@@ -183,7 +183,7 @@ tbody tr:hover {
 td img {
 	max-width: 150px;
 	height: auto;
-	border-radius: 10px;
+	border-radius: 4px;
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -201,8 +201,8 @@ tbody tr:last-child td {
 	cursor: pointer;
 	padding: 12px 20px;
 	background-color: white;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	/* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .btn:focus-visible {
@@ -235,23 +235,25 @@ tbody tr:last-child td {
 .modal-wrapper {
 	background: ghostwhite;
 	padding: 20px;
-	border-radius: 10px;
+	border-radius: 4px;
 	max-width: 80%;
 	max-height: 80%;
 	overflow: auto;
 	position: relative;
+	left: 20px;
+	top: 20px;
 }
 
 .close-modal-btn {
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	background: slateblue;
+	background: #2b2b2b;
 	color: #fdb347;
 	border: none;
 	width: 30px;
 	height: 30px;
-	border-radius: 10%;
+	border-radius: 4px;
 	cursor: pointer;
 	font-size: 18px;
 }
@@ -271,10 +273,12 @@ tbody tr:last-child td {
 	padding: 30px 20px;
 	text-align: center;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 4px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	margin: 20px auto;
 	max-width: 800px;
+		overflow: hidden;
+
 }
 
 #contact a {
@@ -289,7 +293,7 @@ tbody tr:last-child td {
 	color: #2b2b2b; /* Deep charcoal gray */
 	background-color: #f7f7f7;
 	border-style: solid;
-	border-radius: 10px;
+	border-radius: 4px;
 }
 
 #contact i {
@@ -301,7 +305,7 @@ tbody tr:last-child td {
 	width: 60%;
 	height: auto;
 	margin: 20px auto;
-	border-radius: 10px;
+	border-radius: 4px;
 	display: block;
 	max-width: 400px;
 }
@@ -347,7 +351,7 @@ tbody tr:last-child td {
 	transition: all 0.3s ease;
 	cursor: pointer;
 	padding: 0.5rem 1rem;
-	border-radius: 10px;
+	border-radius: 4px;
 }
 
 .footer-link:hover {
@@ -372,7 +376,7 @@ tbody tr:last-child td {
 	background: var(--secondary);
 	color: white;
 	border: none;
-	border-radius: 10px;
+	border-radius: 4px;
 	padding: 10px 15px;
 	font-size: 14px;
 	cursor: pointer;
@@ -393,7 +397,7 @@ tbody tr:last-child td {
 table img {
 	max-width: 150px;
 	height: auto;
-	border-radius: 10px;
+	border-radius: 4px;
 }
 
 table img:hover {
@@ -414,7 +418,7 @@ table img:hover {
 	td img {
 		max-width: 85%;
 		height: auto;
-		border-radius: 10px; /* Rounded edges for images */
+		border-radius: 4px; /* Rounded edges for images */
 	}
 
 	.footer-links {
