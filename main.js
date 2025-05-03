@@ -74,4 +74,22 @@ closeModalBtn.addEventListener('click', () => {
 	modal.style.display = 'none';
 });
 
+const closeBtn = document.querySelector(".close-modal-btn");
+
+// Close modal function
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// 1. Close when clicking the [×] button
+closeBtn.addEventListener("click", closeModal);
+
+// 2. Close when clicking OUTSIDE the modal-wrapper (on the overlay)
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) { // Checks if click is on the overlay (not content)
+    closeModal();
+  }
+});
+
+
 window.openModal = openModal;
