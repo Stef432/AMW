@@ -277,8 +277,7 @@ tbody tr:last-child td {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	margin: 20px auto;
 	max-width: 800px;
-		overflow: hidden;
-
+	overflow: hidden;
 }
 
 #contact a {
@@ -416,9 +415,8 @@ table img:hover {
 	}
 
 	td img {
-		max-width: 85%;
 		height: auto;
-		border-radius: 4px; /* Rounded edges for images */
+		border-radius: 4px;
 	}
 
 	.footer-links {
@@ -444,6 +442,25 @@ table img:hover {
 
 	.section {
 		padding: 30px 10px;
+	}
+	.product-wrapper tr {
+		display: block; /* Turns table rows into blocks */
+		margin-bottom: 2rem; /* Space between products */
+		border-bottom: 1px solid #ddd; /* Visual separator */
+	}
+
+	.product-wrapper td {
+		display: block; /* Stack table cells vertically */
+		width: 100% !important; /* Force full width */
+		padding: 0.5rem 0;
+	}
+
+	.product-wrapper td:first-child {
+		text-align: center; /* Center images on mobile */
+	}
+
+	.product-wrapper img {
+		max-width: 80% !important; /* Larger images on mobile */
 	}
 }
 /*
